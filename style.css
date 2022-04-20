@@ -267,20 +267,15 @@ footer {
 }
 
 .social-list-wrapper {
-    height: 50%;
+    height: 70%;
     position: absolute;
-    top: 50%; left: 50%;
-    transform: translate(-50%,-50%);
+    top: 100%; left: 50%;
+    transform: translate(-50%,-100%);
 }
 
 .social-item {
     padding: 0 30px;
     display: inline;
-}
-
-.social-item li a {
-    height: 65px;
-    width: 65x;
 }
 
 .social-item a img {
@@ -319,8 +314,8 @@ footer {
     .section { height: 60vw; }
 
     footer { height: 150px; }
-    .social-item { padding: 0 20px; }
-    .social-item a img { height: 37px; width: 37px;}
+    .social-item { padding: 0 10px; }
+    .social-item a img { height: 35px; width: 35px;}
 }
 
 @media screen and (max-width: 560px)
