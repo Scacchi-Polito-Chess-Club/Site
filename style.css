@@ -33,6 +33,16 @@ a {
 
 /* #endregion Main Theme */
 
+/* #region Work in Progress */
+
+.workInProgress
+{
+    height: 60%;
+    text-align: center;
+}
+
+/* #endregion Work in Progress */
+
 /* #region Popup */
 
 .popup {
@@ -43,11 +53,10 @@ a {
     top: 10%;
     transform: scale(0.01);
     text-align: center;
-    padding: 5px 10px;
+    padding: 10px 10px;
     background-color: white;
     color: #002B49;
     border: 5px solid black;
-    border-radius: 60px;
     visibility: hidden;
     transition: 0.4s;
 }
@@ -112,11 +121,42 @@ a {
 /* #region Navbar */
 
 nav {
+    z-index: 500;
     height: 330px;
     width: 100%;
     background-color: #002B49;
     display: grid;
     grid-template-columns: 1fr 1fr 1fr;
+    transition: all .8s;
+    -webkit-transition: all .8s;
+    -moz-transition: all .8s;
+    -o-transition: all .8s
+}
+
+.nav-shrink {
+    height: 100px !important;
+    grid-template-columns: 1fr 5fr 1fr !important;
+    transition: all .8s;
+    -webkit-transition: all .8s;
+    -moz-transition: all .8s;
+    -o-transition: all .8s
+}
+
+.sticky {
+    position: fixed;
+    top: 0;
+}
+
+.preContent {
+    height: 0px;
+}
+
+.preContent-shrink {
+    height: 230px;
+}
+
+.menu-list-shrink {
+    display: none !important;
 }
 
 .menu {
@@ -143,6 +183,18 @@ nav {
 .logoClub {
     background: url(./images/logoClubNeg.png) no-repeat center center;
     background-size: 85%;
+    transition: all 1s;
+    -webkit-transition: all 1s;
+    -moz-transition: all 1s;
+    -o-transition: all 1s
+}
+
+.logoClub-shrink {
+    background-size: 0px !important;
+    transition: all 1s;
+    -webkit-transition: all 1s;
+    -moz-transition: all 1s;
+    -o-transition: all 1s
 }
 
 .logoPoli {
@@ -150,9 +202,18 @@ nav {
     background-size: 70%;
 }
 
+.logoPoli-shrink {
+    background: url(./images/logoClubNeg.png) no-repeat center center !important;
+    background-size: 50% !important;
+}
+
 .hamburger {
     display: none;
 }
+
+.hamburger.active .bar:nth-child(2) { opacity: 0; }
+.hamburger.active .bar:nth-child(1) { transform: translateY(8px) rotate(45deg); }
+.hamburger.active .bar:nth-child(3) { transform: translateY(-8px) rotate(-45deg); }
 
 .bar {
     display: block;
@@ -303,19 +364,19 @@ footer {
 
 @media screen and (max-width: 770px) {
     
-    nav { height: 180px; }
+    nav { height: 150px; }
+    .nav-shrink { height: 80px !important; grid-template-columns: 1fr 1fr 1fr !important; }
+    .logoPoli-shrink { background-size: 70% !important; }
 
     .menu-list {display:  none; }
     .hamburger { display: block; }
-    .hamburger.active .bar:nth-child(2) { opacity: 0; }
-    .hamburger.active .bar:nth-child(1) { transform: translateY(8px) rotate(45deg); }
-    .hamburger.active .bar:nth-child(3) { transform: translateY(-8px) rotate(-45deg); }
   
     .section { height: 60vw; }
 
-    footer { height: 150px; }
-    .social-item { padding: 0 10px; }
+    footer { height: 100px; }
+    .social-item { padding: 0 15px; }
     .social-item a img { height: 35px; width: 35px;}
+    .copyright p{ font-size: 15px;}
 }
 
 @media screen and (max-width: 560px)
@@ -331,21 +392,31 @@ footer {
         border-bottom-left-radius: 0px;
         border-top-right-radius: 40px;
     }
+
+    .popup h1 {
+        margin: 12%;
+        width: 76%;
+        font-size: 20px;
+        padding: 5px 5px;
+    }
+
+    .social-item { padding: 0 10px; }
+    .social-item a img { height: 30px; width: 30px;}
 }
 
-@media screen and (max-height: 750px) {
+@media screen and (max-height: 650px) {
 
     nav { height: 180px; }
+    .nav-shrink { height: 100px !important; grid-template-columns: 1fr 1fr 1fr !important; }
+    .logoPoli-shrink { background-size: 50% !important; }
 
     .menu-list {display:  none; }
     .hamburger { display: block; }
-    .hamburger.active .bar:nth-child(2) { opacity: 0; }
-    .hamburger.active .bar:nth-child(1) { transform: translateY(8px) rotate(45deg); }
-    .hamburger.active .bar:nth-child(3) { transform: translateY(-8px) rotate(-45deg); }
-    
-    .section { height: 80%; }
 
-    footer { height: 150px; }
+    footer { height: 100px; }
+    .social-item { padding: 0 10px; }
+    .social-item a img { height: 30px; width: 30px;}
+    .copyright p{ font-size: 15px;}
 }
 
 /* #endregion Responsive Design */

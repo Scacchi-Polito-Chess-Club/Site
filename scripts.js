@@ -1,9 +1,70 @@
-/* Open when someone clicks on the span element */
+let toggle = false;
+
+window.onload = function() {
+    assignPopup();
+    flexFont();
+};
+window.onresize = function() {
+    flexFont();
+};
+
+window.onscroll = function() {
+    scrollFunction()
+};
+
+function scrollFunction() {
+    let header = document.getElementById("header");
+    let preContent = document.getElementById("preContent");
+    let menuList = document.getElementById("menu-list");
+    let hamburger = document.getElementById("hamburger");
+    let logoPoli = document.getElementById("logoPoli");
+    let logoClub = document.getElementById("logoClub");
+
+    if (window.matchMedia("(max-width: 770px)").matches || window.matchMedia("(max-height: 650px)").matches)
+    {
+        if (window.pageYOffset > 120)
+        {
+            if (toggle)
+            return;
+        }
+        else if (window.pageYOffset < 110)
+        {
+            if (!toggle)
+            return;
+        }
+        else {return;}
+    }
+    else {
+        if (window.pageYOffset > 230) 
+        {
+            if (toggle)
+                return;
+            
+            hamburger.style.display = "block";
+        } 
+        else if (window.pageYOffset < 220)
+        {   
+            if (!toggle)
+                return;
+    
+            hamburger.style.display = "none";
+        }
+        else {return;}
+    }
+
+    toggle = !toggle;
+    header.classList.toggle("nav-shrink");
+    preContent.classList.toggle("preContent-shrink")
+    menuList.classList.toggle("menu-list-shrink");
+    logoPoli.classList.toggle("logoPoli-shrink");
+    logoClub.classList.toggle("logoClub-shrink");
+    header.classList.toggle("sticky");
+} 
+
 function openNav() {
     document.getElementById("hamburgerMenu").style.width = "100%";
 }
 
-/* Close when someone clicks on the "x" symbol inside the overlay */
 function closeNav() {
     document.getElementById("hamburgerMenu").style.width = "0%";
 } 
@@ -23,7 +84,7 @@ function assignPopup() {
 function openPopup() {
     let popup = document.getElementById("popup");
     popup.classList.add("openPopup");
-    setTimeout(() => {  popup.classList.remove("openPopup"); }, 1500);
+    setTimeout(() => {  popup.classList.remove("openPopup"); }, 2000);
 }
 
 function flexFont() {
@@ -56,12 +117,4 @@ function flexFont() {
 
         divs[i].style.fontSize = relFontSize+'px';
     }
-};
-
-window.onload = function(event) {
-    assignPopup();
-    flexFont();
-};
-window.onresize = function(event) {
-    flexFont();
 };
