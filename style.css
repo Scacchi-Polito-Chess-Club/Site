@@ -15,6 +15,7 @@ Colore Pantone: #EF7B00
 
 html, body {
     height: 100%;
+    font-size: 80%;
 }
 
 ul {
@@ -35,10 +36,15 @@ a {
 
 /* #region Work in Progress */
 
-.workInProgress
-{
-    height: 60%;
+.workInProgress {
+    height: 100%;
     text-align: center;
+}
+
+.workInProgress h1 {
+    font-family: "Koulen";
+    color: #EF7B00;
+    text-shadow: none !important;
 }
 
 /* #endregion Work in Progress */
@@ -53,7 +59,7 @@ a {
     top: 10%;
     transform: scale(0.01);
     text-align: center;
-    padding: 10px 10px;
+    padding: 5px 10px;
     background-color: white;
     color: #002B49;
     border: 5px solid black;
@@ -62,8 +68,57 @@ a {
 }
 
 .openPopup {
-    visibility: visible;
-    transform: scale(1);
+    visibility: visible !important;
+    transform: scale(1) !important;
+}
+
+.eventPopupContainer {
+    position: absolute;
+    z-index: 100;
+    width: 50%;
+    margin: 25%;
+    top: 10%;
+    transform: scale(0.01);
+    text-align: center;
+    padding: 0px;
+    background-color: #eee;
+    color: #002B49;
+    border: 5px solid black;
+    visibility: hidden;
+    transition: 0.4s;
+}
+
+.eventPopupTitle {
+    background-color: white;
+    color: #EF7B00;
+    padding: 20px 40px;
+}
+
+.eventPopupTitle h1 {
+    line-height: 3.8rem;
+    font-size: 3rem;
+    font-family: Koulen;
+}
+
+.eventPopupMessage {
+    padding: 20px;
+}
+
+.eventPopupMessage h1 {
+    font-size: 2rem;
+}
+
+.eventPopupFooter {
+    padding: 20px 0 40px 0;
+}
+
+.eventPopupFooter button {
+    font-size: 2rem;
+    border-radius: 100px;
+    color: #EF7B00;
+    background-color: white;
+    padding: 20px;
+    border: 2px solid black;
 }
 
 /* #endregion */
@@ -121,42 +176,11 @@ a {
 /* #region Navbar */
 
 nav {
-    z-index: 500;
     height: 330px;
     width: 100%;
     background-color: #002B49;
     display: grid;
     grid-template-columns: 1fr 1fr 1fr;
-    transition: all .8s;
-    -webkit-transition: all .8s;
-    -moz-transition: all .8s;
-    -o-transition: all .8s
-}
-
-.nav-shrink {
-    height: 100px !important;
-    grid-template-columns: 1fr 5fr 1fr !important;
-    transition: all .8s;
-    -webkit-transition: all .8s;
-    -moz-transition: all .8s;
-    -o-transition: all .8s
-}
-
-.sticky {
-    position: fixed;
-    top: 0;
-}
-
-.preContent {
-    height: 0px;
-}
-
-.preContent-shrink {
-    height: 230px;
-}
-
-.menu-list-shrink {
-    display: none !important;
 }
 
 .menu {
@@ -183,18 +207,6 @@ nav {
 .logoClub {
     background: url(./images/logoClubNeg.png) no-repeat center center;
     background-size: 85%;
-    transition: all 1s;
-    -webkit-transition: all 1s;
-    -moz-transition: all 1s;
-    -o-transition: all 1s
-}
-
-.logoClub-shrink {
-    background-size: 0px !important;
-    transition: all 1s;
-    -webkit-transition: all 1s;
-    -moz-transition: all 1s;
-    -o-transition: all 1s
 }
 
 .logoPoli {
@@ -202,18 +214,9 @@ nav {
     background-size: 70%;
 }
 
-.logoPoli-shrink {
-    background: url(./images/logoClubNeg.png) no-repeat center center !important;
-    background-size: 50% !important;
-}
-
 .hamburger {
     display: none;
 }
-
-.hamburger.active .bar:nth-child(2) { opacity: 0; }
-.hamburger.active .bar:nth-child(1) { transform: translateY(8px) rotate(45deg); }
-.hamburger.active .bar:nth-child(3) { transform: translateY(-8px) rotate(-45deg); }
 
 .bar {
     display: block;
@@ -325,13 +328,14 @@ footer {
     height: 50%;
     width: 100%;
     position: relative;
+    text-align: center;
 }
 
 .social-list-wrapper {
     height: 70%;
+    width: 100%;
     position: absolute;
-    top: 100%; left: 50%;
-    transform: translate(-50%,-100%);
+    top: 30%;
 }
 
 .social-item {
@@ -358,25 +362,32 @@ footer {
     vertical-align: middle;
 }
 
-/* #endregion Footre */
+/* #endregion Footer */
 
 /* #region Responsive Design */
 
 @media screen and (max-width: 770px) {
     
-    nav { height: 150px; }
-    .nav-shrink { height: 80px !important; grid-template-columns: 1fr 1fr 1fr !important; }
-    .logoPoli-shrink { background-size: 70% !important; }
+    nav { height: 180px; }
 
     .menu-list {display:  none; }
     .hamburger { display: block; }
+    .hamburger.active .bar:nth-child(2) { opacity: 0; }
+    .hamburger.active .bar:nth-child(1) { transform: translateY(8px) rotate(45deg); }
+    .hamburger.active .bar:nth-child(3) { transform: translateY(-8px) rotate(-45deg); }
   
     .section { height: 60vw; }
 
-    footer { height: 100px; }
+    .popup {
+        top: 25%;
+        width: 76%;
+        margin: 12%;
+    }
+
+    footer {  height: 120px; }
+    .copyright p { font-size: 15px !important; };
     .social-item { padding: 0 15px; }
-    .social-item a img { height: 35px; width: 35px;}
-    .copyright p{ font-size: 15px;}
+    .social-item a img { height: 40px; width: 40px;}
 }
 
 @media screen and (max-width: 560px)
@@ -393,30 +404,161 @@ footer {
         border-top-right-radius: 40px;
     }
 
-    .popup h1 {
-        margin: 12%;
-        width: 76%;
-        font-size: 20px;
-        padding: 5px 5px;
+    .eventPopupContainer {
+        width: 80%;
+        margin: 10%;
+        top: 30%;
+        transform: scale(0.01);
+        text-align: center;
+        padding: 0px;
+    }
+    
+    .eventPopupTitle {
+        padding: 20px 40px;
+    }
+    
+    .eventPopupTitle h1 {
+        font-size: 3.2rem;
+    }
+    
+    .eventPopupMessage {
+        padding: 20px;
+    }
+    
+    .eventPopupMessage h1 {
+        font-size: 2.3rem;
+    }
+    
+    .eventPopupFooter {
+        padding: 10px 0 20px 0;
     }
 
-    .social-item { padding: 0 10px; }
-    .social-item a img { height: 30px; width: 30px;}
+    .eventPopupFooter button {
+        font-size: 2rem;
+        padding: 15px;
+    }
 }
 
-@media screen and (max-height: 650px) {
+@media screen and (max-height: 750px) {
 
-    nav { height: 180px; }
-    .nav-shrink { height: 100px !important; grid-template-columns: 1fr 1fr 1fr !important; }
-    .logoPoli-shrink { background-size: 50% !important; }
+    nav { height: 150px; }
 
     .menu-list {display:  none; }
     .hamburger { display: block; }
+    .hamburger.active .bar:nth-child(2) { opacity: 0; }
+    .hamburger.active .bar:nth-child(1) { transform: translateY(8px) rotate(45deg); }
+    .hamburger.active .bar:nth-child(3) { transform: translateY(-8px) rotate(-45deg); }
+    
+    .section { height: 80%; }
 
-    footer { height: 100px; }
-    .social-item { padding: 0 10px; }
-    .social-item a img { height: 30px; width: 30px;}
-    .copyright p{ font-size: 15px;}
+    footer { height: 120px; }
+    .social-item { padding: 0 15px; }
+    .copyright p { font-size: 15px !important; }
 }
 
 /* #endregion Responsive Design */
+
+.container {
+    width: 100%;
+    height: 70vh;
+    background-color: rgba(231, 214, 138, 0.9);
+    color: #eee;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+  
+  .calendar {
+    width: 45rem;
+    height: 52rem;
+    background-color: #002B49;
+    box-shadow: 0 0.5rem 3rem rgba(0, 0, 0, 0.4);
+  }
+  
+  .month {
+    width: 100%;
+    height: 12rem;
+    background-color: #eee;
+    color: #002B49;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 0 2rem;
+    text-align: center;
+    text-shadow: 0 0.3rem 0.5rem rgba(0, 0, 0, 0.5);
+  }
+  
+  .month i {
+    font-size: 2.5rem;
+    cursor: pointer;
+  }
+  
+  .month h1 {
+    font-size: 3rem;
+    font-weight: 400;
+    text-transform: uppercase;
+    letter-spacing: 0.2rem;
+    margin-bottom: 1rem;
+  }
+  
+  .month p {
+    font-size: 1.6rem;
+  }
+  
+  .weekdays {
+    width: 100%;
+    height: 5rem;
+    padding: 0 0.4rem;
+    display: flex;
+    align-items: center;
+  }
+  
+  .weekdays div {
+    font-size: 1.5rem;
+    font-weight: 400;
+    letter-spacing: 0.1rem;
+    width: calc(44.2rem / 7);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-shadow: 0 0.3rem 0.5rem rgba(0, 0, 0, 0.5);
+  }
+  
+  .days {
+    width: 100%;
+    display: flex;
+    flex-wrap: wrap;
+    padding: 0.2rem;
+  }
+  
+  .days div {
+    font-size: 1.4rem;
+    margin: 0.3rem;
+    width: calc(40.2rem / 7);
+    height: 5rem;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-shadow: 0 0.3rem 0.5rem rgba(0, 0, 0, 0.5);
+    transition: background-color 0.2s;
+  }
+  
+  .event:hover {
+    background-color: rgba(252, 174, 102, 0.9);
+    border: 0.2rem solid #777;
+    cursor: pointer;
+  }
+  
+  .prev-date,
+  .next-date {
+    opacity: 0.5;
+  }
+  
+  .today {
+    background-color: cadetblue;
+    border-radius: 250px;
+  }
+
+  .event {
+    background-color: #EF7B00;
+  }
