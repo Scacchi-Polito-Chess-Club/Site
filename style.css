@@ -1,6 +1,6 @@
 /*
 Colore Blu di Prussia: #002B49
-Colore Pantone: #EF7B00
+Colore Arancione: #EF7B00
 */
 
 /* #region Main Theme */
@@ -15,7 +15,6 @@ Colore Pantone: #EF7B00
 
 html, body {
     height: 100%;
-    font-size: 80%;
 }
 
 ul {
@@ -177,7 +176,6 @@ a {
 
 nav {
     height: 330px;
-    width: 100%;
     background-color: #002B49;
     display: grid;
     grid-template-columns: 1fr 1fr 1fr;
@@ -189,7 +187,7 @@ nav {
 }
 
 .menu-item {
-    padding: 10px 10px;
+    padding: 5px 5px;
 }
 
 .menu-item a {
@@ -260,6 +258,7 @@ nav {
 
 .generic-content h1 {
     width: 85%;
+    font-size: 3vw;
     margin: auto;
     color: #EF7B00;
     text-shadow: -1px 0 black, 0 1px black, 1px 0 black, 0 -1px black;
@@ -267,6 +266,7 @@ nav {
 
 .generic-content p {
     width: 90%;
+    font-size: 1.3vw;
     margin: auto;
     padding: 20px 5%;
 }
@@ -449,7 +449,9 @@ footer {
     .hamburger.active .bar:nth-child(1) { transform: translateY(8px) rotate(45deg); }
     .hamburger.active .bar:nth-child(3) { transform: translateY(-8px) rotate(-45deg); }
     
-    .section { height: 80%; }
+    .section { height: 50%; }
+    .generic-content h1 {font-size: 4vw;}
+    .generic-content p {font-size: 3vw;}
 
     footer { height: 120px; }
     .social-item { padding: 0 15px; }
