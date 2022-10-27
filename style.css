@@ -23,6 +23,7 @@ ul {
 
 h1 {
     font-family: "Sofia", sans-serif;
+    font-size: 3vw;
 }
 
 a {
@@ -31,7 +32,388 @@ a {
     color: #FFFFFF;
 }
 
+p {
+    font-size: 1.3vw;
+}
+
 /* #endregion Main Theme */
+
+/* #region Navbar */
+
+nav {
+    height: 330px;
+    background-color: #002B49;
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+
+}
+
+.menu {
+    text-align: center;
+    margin: auto;
+}
+
+.menu-item {
+    padding: 5px 5px;
+}
+
+.menu-item a {
+    font-weight: bold;
+    transition: all .3s;
+    -webkit-transition: all .3s;
+    -moz-transition: all .3s;
+    -o-transition: all .3s;
+}
+
+.menu-item a:hover {
+    color: #EF7B00;
+}
+
+.logoClub {
+    background: url(./images/logoClubNeg.png) no-repeat center center;
+    background-size: contain;
+    height: 100%;
+    width: 100%;
+    margin: auto;
+    max-height: 220px;
+}
+
+.logoPoli {
+    background: url(./images/logoPolitoNeg.png) no-repeat center center;
+    background-size: contain;
+    height: 100%;
+    width: 100%;
+    margin: auto;
+    max-height: 170px;
+}
+
+.hamburger {
+    display: none;
+}
+
+.bar {
+    display: block;
+    width: 35px;
+    height: 3px;
+    margin: 5px auto;
+    background-color: white;
+    -webkit-transition: all 0.3 ease-in-out;
+    transition: all 0.3 ease-in-out;
+}
+
+/* #endregion Navbar */
+
+/* #region Body */
+
+.section {
+    height: 40%;
+    width: 100%;
+    text-align: center;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+}
+
+.section-text {
+    background-color: white;
+}
+
+.section-image {
+    background-color: #EF7B00;
+}
+
+.generic-image {
+    width: 100%;
+    height: 100%;
+    margin: auto;
+    background-size: contain !important;
+    position: relative;
+    top: 50%; 
+    transform: translate(0,-50%);
+}
+
+.generic-content {
+    width: 100%;
+    position: relative;
+    top: 50%; 
+    left: 50%;
+    transform: translate(-50%,-50%);
+}
+
+.generic-content h1 {
+    width: 85%;
+    margin: auto;
+    color: #EF7B00;
+    text-shadow: -1px 0 black, 0 1px black, 1px 0 black, 0 -1px black;
+}
+
+.generic-content p {
+    color: black;
+    width: 90%;
+    margin: auto;
+    padding: 20px 5%;
+}
+
+/* #endregion Body */
+
+/* #region Footer */
+
+footer {
+    height: 200px;
+    width: 100%;
+    background-color: #444444;
+}
+
+.social {
+    height: 50%;
+    width: 100%;
+    position: relative;
+    text-align: center;
+}
+
+.social-list-wrapper {
+    height: 70%;
+    width: 100%;
+    position: absolute;
+    top: 30%;
+}
+
+.social-item {
+    padding: 0 30px;
+    display: inline;
+}
+
+.social-item a img {
+    height: 65px;
+    width: 65x;
+}
+
+.copyright {
+    height: 50%;
+    width: 100%;
+    text-align: center;
+    color: white;
+    display: table;
+}
+
+.copyright p {
+    font-size: 20px;
+    display: table-cell;
+    vertical-align: middle;
+}
+
+/* #endregion Footer */
+
+/* #region Responsive Design */
+
+@media screen and (max-width: 770px) {
+    
+    nav { height: 180px; }
+
+    .logoClub {
+        max-height: 150px;
+    }
+
+    .logoPoli {
+        max-height: 100px;
+        max-width: 150px;
+    }
+
+    .menu-list {display:  none; }
+    .hamburger { display: block; }
+    .hamburger.active .bar:nth-child(2) { opacity: 0; }
+    .hamburger.active .bar:nth-child(1) { transform: translateY(8px) rotate(45deg); }
+    .hamburger.active .bar:nth-child(3) { transform: translateY(-8px) rotate(-45deg); }
+  
+    .section { height: 60vw; }
+
+    .popup {
+        top: 25%;
+        width: 76%;
+        margin: 12%;
+    }
+
+    footer {  height: 120px; }
+    .copyright p { font-size: 15px !important; };
+    .social-item { padding: 0 15px; }
+    .social-item a img { height: 40px; width: 40px;}
+}
+
+@media screen and (max-width: 560px)
+{
+    .generic-content h1 {font-size: 4vw;}
+    .generic-content p {font-size: 3vw;}
+
+    .eventPopupContainer {
+        width: 80%;
+        margin: 10%;
+        top: 30%;
+        transform: scale(0.01);
+        text-align: center;
+        padding: 0px;
+    }
+    
+    .eventPopupTitle {
+        padding: 20px 40px;
+    }
+    
+    .eventPopupTitle h1 {
+        font-size: 3.2rem;
+    }
+    
+    .eventPopupMessage {
+        padding: 20px;
+    }
+    
+    .eventPopupMessage h1 {
+        font-size: 2.3rem;
+    }
+    
+    .eventPopupFooter {
+        padding: 10px 0 20px 0;
+    }
+
+    .eventPopupFooter button {
+        font-size: 2rem;
+        padding: 15px;
+    }
+}
+
+@media screen and (max-height: 750px) {
+
+    nav { height: 180px; }
+  
+    .logoClub {
+        max-height: 150px;
+    }
+
+    .logoPoli {
+        max-height: 100px;
+        max-width: 150px;
+    }
+
+    .menu-list {display:  none; }
+    .hamburger { display: block; }
+    .hamburger.active .bar:nth-child(2) { opacity: 0; }
+    .hamburger.active .bar:nth-child(1) { transform: translateY(8px) rotate(45deg); }
+    .hamburger.active .bar:nth-child(3) { transform: translateY(-8px) rotate(-45deg); }
+    
+    .section { height: 50%; }
+
+    footer { height: 120px; }
+    .social-item { padding: 0 15px; }
+    .copyright p { font-size: 15px !important; }
+}
+
+/* #endregion Responsive Design */
+
+/* #region Calendar */
+
+.container {
+    width: 100%;
+    height: 70vh;
+    background-color: rgba(231, 214, 138, 0.9);
+    color: #eee;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+  
+  .calendar {
+    width: 45rem;
+    height: 52rem;
+    background-color: #002B49;
+    box-shadow: 0 0.5rem 3rem rgba(0, 0, 0, 0.4);
+  }
+  
+  .month {
+    width: 100%;
+    height: 12rem;
+    background-color: #eee;
+    color: #002B49;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 0 2rem;
+    text-align: center;
+    text-shadow: 0 0.3rem 0.5rem rgba(0, 0, 0, 0.5);
+  }
+  
+  .month i {
+    font-size: 2.5rem;
+    cursor: pointer;
+  }
+  
+  .month h1 {
+    font-size: 3rem;
+    font-weight: 400;
+    text-transform: uppercase;
+    letter-spacing: 0.2rem;
+    margin-bottom: 1rem;
+  }
+  
+  .month p {
+    font-size: 1.6rem;
+  }
+  
+  .weekdays {
+    width: 100%;
+    height: 5rem;
+    padding: 0 0.4rem;
+    display: flex;
+    align-items: center;
+  }
+  
+  .weekdays div {
+    font-size: 1.5rem;
+    font-weight: 400;
+    letter-spacing: 0.1rem;
+    width: calc(44.2rem / 7);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-shadow: 0 0.3rem 0.5rem rgba(0, 0, 0, 0.5);
+  }
+  
+  .days {
+    width: 100%;
+    display: flex;
+    flex-wrap: wrap;
+    padding: 0.2rem;
+  }
+  
+  .days div {
+    font-size: 1.4rem;
+    margin: 0.3rem;
+    width: calc(40.2rem / 7);
+    height: 5rem;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-shadow: 0 0.3rem 0.5rem rgba(0, 0, 0, 0.5);
+    transition: background-color 0.2s;
+  }
+  
+  .event:hover {
+    background-color: rgba(252, 174, 102, 0.9);
+    border: 0.2rem solid #777;
+    cursor: pointer;
+  }
+  
+  .prev-date,
+  .next-date {
+    opacity: 0.5;
+  }
+  
+  .today {
+    background-color: cadetblue;
+    border-radius: 250px;
+  }
+
+  .event {
+    background-color: #EF7B00;
+  }
+
+/* #endregion Calendar */
 
 /* #region Work in Progress */
 
@@ -171,396 +553,3 @@ a {
   }
   
 /* #endregion HamburgerMenu */
-
-/* #region Navbar */
-
-nav {
-    height: 330px;
-    background-color: #002B49;
-    display: grid;
-    grid-template-columns: 1fr 1fr 1fr;
-}
-
-.menu {
-    text-align: center;
-    margin: auto;
-}
-
-.menu-item {
-    padding: 5px 5px;
-}
-
-.menu-item a {
-    font-weight: bold;
-    transition: all .3s;
-    -webkit-transition: all .3s;
-    -moz-transition: all .3s;
-    -o-transition: all .3s;
-}
-
-.menu-item a:hover {
-    color: #EF7B00;
-}
-
-.logoClub {
-    background: url(./images/logoClubNeg.png) no-repeat center center;
-    background-size: 85%;
-}
-
-.logoPoli {
-    background: url(./images/logoPolitoNeg.png) no-repeat center center;
-    background-size: 70%;
-}
-
-.hamburger {
-    display: none;
-}
-
-.bar {
-    display: block;
-    width: 35px;
-    height: 3px;
-    margin: 5px auto;
-    background-color: white;
-    -webkit-transition: all 0.3 ease-in-out;
-    transition: all 0.3 ease-in-out;
-}
-
-/* #endregion Navbar */
-
-/* #region Body */
-
-.section {
-    height: 40%;
-    width: 100%;
-    text-align: center;
-    display: grid;
-    grid-template-columns: 1fr 1fr;
-}
-
-.section-text {
-    background-color: white;
-    position: relative;
-}
-
-.section-image {
-    background-color: #EF7B00;
-    position: relative;
-}
-
-.generic-content {
-    width: 100%;
-    position: absolute;
-    top: 50%; 
-    left: 50%;
-    transform: translate(-50%,-50%);
-}
-
-.generic-content h1 {
-    width: 85%;
-    font-size: 3vw;
-    margin: auto;
-    color: #EF7B00;
-    text-shadow: -1px 0 black, 0 1px black, 1px 0 black, 0 -1px black;
-}
-
-.generic-content p {
-    width: 90%;
-    font-size: 1.3vw;
-    margin: auto;
-    padding: 20px 5%;
-}
-
-.eventSection {
-    height: 300px;
-    width: 100%;
-    text-align: center;
-    display: grid;
-    padding: 20px 40px;
-    background-color: #EF7B00;
-}
-
-.eventContent {
-    background-color: rgba(255, 255, 255, 0.7);
-    border-radius: 50px;
-    border: 10px solid #002B49;
-    display: grid;
-    grid-template-columns: 2fr 4fr;
-}
-
-.eventSectionDate {
-    background-color: rgba(255, 255, 255, 0.6);
-    border-top-left-radius: 40px;
-    border-bottom-left-radius: 40px;
-    padding: 20px;
-    border-right: 10px solid #002B49;
-    position: relative;
-}
-
-.eventSectionDate h1{
-    color: black !important;
-    text-shadow: -1px 0 white, 0 1px white, 1px 0 white, 0 -1px white;
-}
-
-.eventSectionDescription {
-    position: relative;
-}
-
-.firstEvent {
-    padding-top: 40px; 
-}
-
-.lastEvent {
-    padding-bottom: 40px; 
-}
-
-/* #endregion Body */
-
-/* #region Footer */
-
-footer {
-    height: 200px;
-    width: 100%;
-    background-color: #444444;
-}
-
-.social {
-    height: 50%;
-    width: 100%;
-    position: relative;
-    text-align: center;
-}
-
-.social-list-wrapper {
-    height: 70%;
-    width: 100%;
-    position: absolute;
-    top: 30%;
-}
-
-.social-item {
-    padding: 0 30px;
-    display: inline;
-}
-
-.social-item a img {
-    height: 65px;
-    width: 65x;
-}
-
-.copyright {
-    height: 50%;
-    width: 100%;
-    text-align: center;
-    color: white;
-    display: table;
-}
-
-.copyright p {
-    font-size: 20px;
-    display: table-cell;
-    vertical-align: middle;
-}
-
-/* #endregion Footer */
-
-/* #region Responsive Design */
-
-@media screen and (max-width: 770px) {
-    
-    nav { height: 180px; }
-
-    .menu-list {display:  none; }
-    .hamburger { display: block; }
-    .hamburger.active .bar:nth-child(2) { opacity: 0; }
-    .hamburger.active .bar:nth-child(1) { transform: translateY(8px) rotate(45deg); }
-    .hamburger.active .bar:nth-child(3) { transform: translateY(-8px) rotate(-45deg); }
-  
-    .section { height: 60vw; }
-
-    .popup {
-        top: 25%;
-        width: 76%;
-        margin: 12%;
-    }
-
-    footer {  height: 120px; }
-    .copyright p { font-size: 15px !important; };
-    .social-item { padding: 0 15px; }
-    .social-item a img { height: 40px; width: 40px;}
-}
-
-@media screen and (max-width: 560px)
-{
-    .eventContent {
-        grid-template-rows: 2fr 5fr;
-        grid-template-columns: 1fr;
-        border: 7px solid #002B49;
-    }
-    .eventSectionDate {
-        border-right: 0px;
-        border-bottom: 7px solid #002B49;
-        border-bottom-left-radius: 0px;
-        border-top-right-radius: 40px;
-    }
-
-    .eventPopupContainer {
-        width: 80%;
-        margin: 10%;
-        top: 30%;
-        transform: scale(0.01);
-        text-align: center;
-        padding: 0px;
-    }
-    
-    .eventPopupTitle {
-        padding: 20px 40px;
-    }
-    
-    .eventPopupTitle h1 {
-        font-size: 3.2rem;
-    }
-    
-    .eventPopupMessage {
-        padding: 20px;
-    }
-    
-    .eventPopupMessage h1 {
-        font-size: 2.3rem;
-    }
-    
-    .eventPopupFooter {
-        padding: 10px 0 20px 0;
-    }
-
-    .eventPopupFooter button {
-        font-size: 2rem;
-        padding: 15px;
-    }
-}
-
-@media screen and (max-height: 750px) {
-
-    nav { height: 150px; }
-
-    .menu-list {display:  none; }
-    .hamburger { display: block; }
-    .hamburger.active .bar:nth-child(2) { opacity: 0; }
-    .hamburger.active .bar:nth-child(1) { transform: translateY(8px) rotate(45deg); }
-    .hamburger.active .bar:nth-child(3) { transform: translateY(-8px) rotate(-45deg); }
-    
-    .section { height: 50%; }
-    .generic-content h1 {font-size: 4vw;}
-    .generic-content p {font-size: 3vw;}
-
-    footer { height: 120px; }
-    .social-item { padding: 0 15px; }
-    .copyright p { font-size: 15px !important; }
-}
-
-/* #endregion Responsive Design */
-
-.container {
-    width: 100%;
-    height: 70vh;
-    background-color: rgba(231, 214, 138, 0.9);
-    color: #eee;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-  }
-  
-  .calendar {
-    width: 45rem;
-    height: 52rem;
-    background-color: #002B49;
-    box-shadow: 0 0.5rem 3rem rgba(0, 0, 0, 0.4);
-  }
-  
-  .month {
-    width: 100%;
-    height: 12rem;
-    background-color: #eee;
-    color: #002B49;
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    padding: 0 2rem;
-    text-align: center;
-    text-shadow: 0 0.3rem 0.5rem rgba(0, 0, 0, 0.5);
-  }
-  
-  .month i {
-    font-size: 2.5rem;
-    cursor: pointer;
-  }
-  
-  .month h1 {
-    font-size: 3rem;
-    font-weight: 400;
-    text-transform: uppercase;
-    letter-spacing: 0.2rem;
-    margin-bottom: 1rem;
-  }
-  
-  .month p {
-    font-size: 1.6rem;
-  }
-  
-  .weekdays {
-    width: 100%;
-    height: 5rem;
-    padding: 0 0.4rem;
-    display: flex;
-    align-items: center;
-  }
-  
-  .weekdays div {
-    font-size: 1.5rem;
-    font-weight: 400;
-    letter-spacing: 0.1rem;
-    width: calc(44.2rem / 7);
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    text-shadow: 0 0.3rem 0.5rem rgba(0, 0, 0, 0.5);
-  }
-  
-  .days {
-    width: 100%;
-    display: flex;
-    flex-wrap: wrap;
-    padding: 0.2rem;
-  }
-  
-  .days div {
-    font-size: 1.4rem;
-    margin: 0.3rem;
-    width: calc(40.2rem / 7);
-    height: 5rem;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    text-shadow: 0 0.3rem 0.5rem rgba(0, 0, 0, 0.5);
-    transition: background-color 0.2s;
-  }
-  
-  .event:hover {
-    background-color: rgba(252, 174, 102, 0.9);
-    border: 0.2rem solid #777;
-    cursor: pointer;
-  }
-  
-  .prev-date,
-  .next-date {
-    opacity: 0.5;
-  }
-  
-  .today {
-    background-color: cadetblue;
-    border-radius: 250px;
-  }
-
-  .event {
-    background-color: #EF7B00;
-  }

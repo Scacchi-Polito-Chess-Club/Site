@@ -6,7 +6,31 @@ function openNav() {
 /* Close when someone clicks on the "x" symbol inside the overlay */
 function closeNav() {
     document.getElementById("hamburgerMenu").style.width = "0%";
-} 
+}
+
+window.onload = function(event) {
+  var path = window. location. pathname;
+  var page = path. split("/"). pop();
+      
+  if (page == "events.html")
+      resizeCalendar();
+
+  assignPopup();
+  flexFont();
+  calendar();
+};
+
+window.onresize = function(event) {
+  var path = window. location. pathname;
+  var page = path. split("/"). pop();
+
+  if (page == "events.html")
+      resizeCalendar();
+
+  flexFont();
+};
+
+//#region PopUp Functions
 
 function assignPopup() {
     var as = document.getElementsByTagName("a");
@@ -26,47 +50,9 @@ function openPopup() {
     setTimeout(() => {  popup.classList.remove("openPopup"); }, 2000);
 }
 
-function flexFont() {
-    var path = window. location. pathname;
-    var page = path. split("/"). pop();
-    var divs = document.getElementsByClassName("flexFont");
-    var coeff;
+//#endregion PopUp Functions
 
-    switch(page)
-    {
-        case "index.html":
-            coeff = 0.05;
-            break;
-        case "events.html":
-            coeff = 0.10;
-            break;
-        default:
-            coeff = 0.05;
-            break;
-    }
-
-    for(var i = 0; i < divs.length; i++) {
-        
-        var relFontSizeWidth = divs[i].offsetWidth*coeff;
-        var relFontSizeHeight = divs[i].offsetHeight*coeff;
-        var relFontSize = relFontSizeWidth;
-
-        if (relFontSizeHeight < relFontSizeWidth)
-            relFontSize = relFontSizeHeight;
-
-        divs[i].style.fontSize = relFontSize+'px';
-    }
-};
-
-function workInProgress() {
-
-    let head = document.getElementById("header");
-    let foot = document.getElementById("footer");
-    let content = document.getElementById("workInProgress");
-    let hfin = window.innerHeight - head.clientHeight - foot.clientHeight;
-    var x = hfin.toString().concat("px");
-    content.style.height = x;
-}
+//#region Calendar
 
 function calendar() {
 
@@ -215,30 +201,50 @@ function resizeCalendar() {
     document.documentElement.style.fontSize = a.toString().concat("%");
 }
 
-window.onload = function(event) {
-    var path = window. location. pathname;
-    var page = path. split("/"). pop();
-    
-    if (page == "index.html")
-        workInProgress();
-        
-    if (page == "events.html")
-        resizeCalendar();
+function flexFont() {
+  var path = window. location. pathname;
+  var page = path. split("/"). pop();
+  var divs = document.getElementsByClassName("flexFont");
+  var coeff;
 
-    assignPopup();
-    flexFont();
-    calendar();
+  switch(page)
+  {
+      case "index.html":
+          coeff = 0.05;
+          break;
+      case "events.html":
+          coeff = 0.10;
+          break;
+      default:
+          coeff = 0.05;
+          break;
+  }
+
+  for(var i = 0; i < divs.length; i++) {
+      
+      var relFontSizeWidth = divs[i].offsetWidth*coeff;
+      var relFontSizeHeight = divs[i].offsetHeight*coeff;
+      var relFontSize = relFontSizeWidth;
+
+      if (relFontSizeHeight < relFontSizeWidth)
+          relFontSize = relFontSizeHeight;
+
+      divs[i].style.fontSize = relFontSize+'px';
+  }
 };
-window.onresize = function(event) {
-    var path = window. location. pathname;
-    var page = path. split("/"). pop();
-    
-    if (page == "index.html")
-        workInProgress();
 
-    if (page == "events.html")
-        resizeCalendar();
+//#endregion
 
-    flexFont();
-};
+//#region Work in Progress
 
+function workInProgress() {
+
+  let head = document.getElementById("header");
+  let foot = document.getElementById("footer");
+  let content = document.getElementById("workInProgress");
+  let hfin = window.innerHeight - head.clientHeight - foot.clientHeight;
+  var x = hfin.toString().concat("px");
+  content.style.height = x;
+}
+
+//#endregion
