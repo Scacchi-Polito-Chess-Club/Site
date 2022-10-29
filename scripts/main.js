@@ -1,3 +1,5 @@
+slideIndex = 0;
+
 /* Open when someone clicks on the span element */
 function openNav() {
     document.getElementById("hamburgerMenu").style.width = "100%";
@@ -13,11 +15,17 @@ window.onload = function(event) {
   var page = path. split("/"). pop();
       
   if (page == "events.html")
-      resizeCalendar();
+  {
+    calendar();
+    resizeCalendar();
+  }
+      
+
+  if (page == "otbtournaments.html")
+    carousel();
 
   assignPopup();
   flexFont();
-  calendar();
 };
 
 window.onresize = function(event) {
@@ -29,6 +37,59 @@ window.onresize = function(event) {
 
   flexFont();
 };
+
+//#region Carousel
+
+function carousel() {
+  
+  var images = [
+    "url(./images/tournaments00/photo_2022-10-23_17-49-41.jpg)",
+    "url(./images/tournaments00/photo_2022-10-23_17-49-42.jpg)",
+    "url(./images/tournaments00/photo_2022-10-23_17-49-49.jpg)",
+    "url(./images/tournaments00/photo_2022-10-23_17-50-07.jpg)",
+    "url(./images/tournaments00/photo_2022-10-23_17-50-08 (2).jpg)",
+    "url(./images/tournaments00/photo_2022-10-23_17-50-08.jpg)",
+    "url(./images/tournaments00/photo_2022-10-23_17-50-10.jpg)",
+    "url(./images/tournaments00/photo_2022-10-23_17-50-12.jpg)",
+    "url(./images/tournaments00/photo_2022-10-23_17-50-13 (2).jpg)",
+    "url(./images/tournaments00/photo_2022-10-23_17-50-13.jpg)",
+    "url(./images/tournaments00/photo_2022-10-23_17-50-15 (2).jpg)",
+    "url(./images/tournaments00/photo_2022-10-23_17-50-15.jpg)",
+    "url(./images/tournaments00/photo_2022-10-23_17-50-16.jpg)",
+    "url(./images/tournaments00/photo_2022-10-23_17-50-17.jpg)",
+    "url(./images/tournaments00/photo_2022-10-23_17-50-18 (2).jpg)",
+    "url(./images/tournaments00/photo_2022-10-23_17-50-18.jpg)",
+    "url(./images/tournaments00/photo_2022-10-23_17-50-19.jpg)",
+    "url(./images/tournaments00/photo_2022-10-23_17-50-20.jpg)",
+    "url(./images/tournaments00/photo_2022-10-23_17-50-21.jpg)",
+    "url(./images/tournaments00/photo_2022-10-23_17-50-30.jpg)",
+    "url(./images/tournaments00/photo_2022-10-23_17-50-31 (2).jpg)",
+    "url(./images/tournaments00/photo_2022-10-23_17-50-31.jpg)",
+    "url(./images/tournaments00/photo_2022-10-23_19-54-15 (2).jpg)",
+    "url(./images/tournaments00/photo_2022-10-23_19-54-15.jpg)",
+    "url(./images/tournaments00/photo_2022-10-23_19-54-16.jpg)",
+    "url(./images/tournaments00/photo_2022-10-23_19-54-17.jpg)",
+    "url(./images/tournaments00/photo_2022-10-23_19-55-11.jpg)",
+    "url(./images/tournaments00/photo_2022-10-23_19-55-13.jpg)",
+    "url(./images/tournaments00/photo_2022-10-23_19-55-18.jpg)",
+    "url(./images/tournaments00/photo_2022-10-23_19-55-23 (2).jpg)",
+    "url(./images/tournaments00/photo_2022-10-23_19-55-23.jpg)",
+    "url(./images/tournaments00/photo_2022-10-23_19-55-25.jpg)",
+    "url(./images/tournaments00/photo_2022-10-23_19-55-26.jpg)",
+    "url(./images/tournaments00/photo_2022-10-23_19-55-27.jpg)",
+    "url(./images/tournaments00/photo_2022-10-23_19-55-29.jpg)",
+    "url(./images/tournaments00/photo_2022-10-23_19-55-30.jpg)",
+    "url(./images/tournaments00/photo_2022-10-23_19-55-31.jpg)",
+    "url(./images/tournaments00/photo_2022-10-23_19-55-32.jpg)",
+    "url(./images/tournaments00/photo_2022-10-23_21-54-39.jpg)"
+  ];
+
+  var x = document.getElementById('carousel');
+  if(slideIndex > images.length) {slideIndex = 0;}
+  x.style.backgroundImage = images[slideIndex++];
+  setTimeout(carousel, 4000); // Change image every 2 seconds
+}
+//#endregion
 
 //#region PopUp Functions
 

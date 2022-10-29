@@ -22,8 +22,12 @@ ul {
 }
 
 h1 {
-    font-family: "Sofia", sans-serif;
+    font-family: "Koulen", sans-serif;
     font-size: 3vw;
+}
+
+h2 {
+    font-size: 2.2vw;
 }
 
 a {
@@ -118,7 +122,7 @@ nav {
 }
 
 .section-image {
-    background-color: #EF7B00;
+    background-color: rgb(239, 123, 0, 0.7);;
 }
 
 .generic-image {
@@ -143,14 +147,36 @@ nav {
     width: 85%;
     margin: auto;
     color: #EF7B00;
-    text-shadow: -1px 0 black, 0 1px black, 1px 0 black, 0 -1px black;
 }
 
 .generic-content p {
-    color: black;
+    color: #002B49;
     width: 90%;
     margin: auto;
     padding: 20px 5%;
+}
+
+.preface {
+    background-color: rgb(239, 123, 0, 0.7);
+    padding: 150px;
+    color:  white;
+}
+
+.carousel-container {
+    height: 60%;
+    width: 100%;
+}
+
+.carousel {
+    height: 80%;
+    width: 80%;
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: contain;
+    position: relative;
+    top: 50%; 
+    left: 50%;
+    transform: translate(-50%,-50%);
 }
 
 /* #endregion Body */
@@ -215,7 +241,7 @@ footer {
 
     .logoPoli {
         max-height: 100px;
-        max-width: 150px;
+        max-width: 110px;
     }
 
     .menu-list {display:  none; }
@@ -288,7 +314,7 @@ footer {
 
     .logoPoli {
         max-height: 100px;
-        max-width: 150px;
+        max-width: 110px;
     }
 
     .menu-list {display:  none; }
@@ -311,7 +337,7 @@ footer {
 .container {
     width: 100%;
     height: 70vh;
-    background-color: rgba(231, 214, 138, 0.9);
+    background-color: rgb(239, 123, 0, 0.7);
     color: #eee;
     display: flex;
     justify-content: center;
