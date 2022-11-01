@@ -87,6 +87,7 @@ function carousel() {
   var x = document.getElementById('carousel');
   if(slideIndex > images.length) {slideIndex = 0;}
   x.style.backgroundImage = images[slideIndex++];
+
   setTimeout(carousel, 4000); // Change image every 2 seconds
 }
 //#endregion
@@ -125,24 +126,31 @@ function calendar() {
   const date = new Date();
 
 const renderCalendar = () => {
+  
+  // get the day of today
   date.setDate(1);
 
+  // get the div containing the days
   const monthDays = document.querySelector(".days");
 
+  // calculate the last day (1-31) of the current month
   const lastDay = new Date(
     date.getFullYear(),
     date.getMonth() + 1,
     0
   ).getDate();
 
+  // calulate the last day (1-31) of the month before
   const prevLastDay = new Date(
     date.getFullYear(),
     date.getMonth(),
     0
   ).getDate();
 
+  // calculate the day (0-6) of today
   const firstDayIndex = date.getDay();
 
+  // calulate the day (0-6) of the last day of the current month
   const lastDayIndex = new Date(
     date.getFullYear(),
     date.getMonth() + 1,
@@ -166,23 +174,24 @@ const renderCalendar = () => {
     "December",
   ];
 
-  document.querySelector(".date h1").innerHTML = months[date.getMonth()];
+  document.querySelector(".date h1").innerHTML = months[date.getMonth()] + " " + date.getFullYear();
 
   document.querySelector(".date p").innerHTML = new Date().toDateString();
 
   let days = "";
 
+  // prepare the days of the month before to be printed
   for (let x = firstDayIndex; x > 0; x--) {
     days += `<div class="prev-date">${prevLastDay - x + 1}</div>`;
   }
 
   for (let i = 1; i <= lastDay; i++) {
 
-    //colorare caselle e aggiungere onclick() qui
+    // color days that have an events on it
     var set = false;
     events.forEach(event => {
-      if (event.getDate() === i && event.getMonth() === date.getMonth()){
-        var id = i.toString().concat("/").concat(event.getMonth().toString());
+      if (event.getDate() === i && event.getMonth() === date.getMonth() && event.getFullYear() == date.getFullYear()){
+        var id = i.toString().concat("/").concat(event.getMonth().toString().concat("/").concat(event.getFullYear().toString()));
         days += `<div class="event" id="${id}" onclick="eventPopup(this.id)">${i}</div>`;
         set = true;
       }
@@ -191,6 +200,7 @@ const renderCalendar = () => {
     if (set)
       continue;
 
+    // fill month with all the days
     if (
       i === new Date().getDate() &&
       date.getMonth() === new Date().getMonth()
@@ -222,20 +232,15 @@ document.querySelector(".next").addEventListener("click", () => {
 renderCalendar();
 }
 
-function closeEventPopup() {
-  let popup = document.getElementById("eventPopupContainer");
-  popup.classList.remove("openPopup");
-}
-
 function eventPopup(id) {
   
   var titles = new Map([
-    ['20/4', '20 Maggio, Incontro con ingeneria matematica, aula 4I'],
-    ['27/4', '27 Maggio, Incontro con ingeneria informatica, aula 2P'],
+    ['20/4/2022', '20 Maggio, Incontro con ingeneria matematica, aula 4I'],
+    ['27/4/2022', '27 Maggio, Incontro con ingeneria informatica, aula 2P'],
   ]);
   var contents = new Map([
-    ['20/4', 'Oltre alla teoria inerente ad aperture, medio gioco e finali, si possono analizzare gli scacchi attraverso la teoria dei giochi. Di questo campo di studio ci parlera il professor Massari, spiegandoci così come due avversari si devono muovere sulla scacchiera per massimizzare le loro chance di raggiungere l\'ambito scacco matto!'],
-    ['27/4', 'Chi non ha mai perso una partita contro un motore scacchistico? Come é possibile che un accozzaglia di circuiti riesca a prevedere tutti i miei piani e a sfruttare anche la più piccola debolezza della mia impenetrabile difesa 300? Il professor Squillero condividerà con noi i segreti di Deep Blue, Alpha Zero, Stockfish... per comprendere come la macchina ha superato l\'uomo.'],
+    ['20/4/2022', 'Oltre alla teoria inerente ad aperture, medio gioco e finali, si possono analizzare gli scacchi attraverso la teoria dei giochi. Di questo campo di studio ci parlera il professor Massari, spiegandoci così come due avversari si devono muovere sulla scacchiera per massimizzare le loro chance di raggiungere l\'ambito scacco matto!'],
+    ['27/4/2022', 'Chi non ha mai perso una partita contro un motore scacchistico? Come é possibile che un accozzaglia di circuiti riesca a prevedere tutti i miei piani e a sfruttare anche la più piccola debolezza della mia impenetrabile difesa 300? Il professor Squillero condividerà con noi i segreti di Deep Blue, Alpha Zero, Stockfish... per comprendere come la macchina ha superato l\'uomo.'],
   ]);
 
   var text = titles.get(id);
@@ -248,6 +253,11 @@ function eventPopup(id) {
 
   let popup = document.getElementById("eventPopupContainer");
   popup.classList.add("openPopup");
+}
+
+function closeEventPopup() {
+  let popup = document.getElementById("eventPopupContainer");
+  popup.classList.remove("openPopup");
 }
 
 function resizeCalendar() {
@@ -263,7 +273,7 @@ function resizeCalendar() {
 }
 
 function flexFont() {
-  var path = window. location. pathname;
+  var path = window.location.pathname;
   var page = path. split("/"). pop();
   var divs = document.getElementsByClassName("flexFont");
   var coeff;
