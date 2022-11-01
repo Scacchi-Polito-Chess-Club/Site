@@ -472,38 +472,7 @@ footer {
 
 /* #endregion Calendar */
 
-/* #region Work in Progress */
-
-.workInProgress {
-    height: 100%;
-    text-align: center;
-}
-
-.workInProgress h1 {
-    font-family: "Koulen";
-    color: #EF7B00;
-    text-shadow: none !important;
-}
-
-/* #endregion Work in Progress */
-
 /* #region Popup */
-
-.popup {
-    position: absolute;
-    z-index: 100;
-    width: 50%;
-    margin: 25%;
-    top: 10%;
-    transform: scale(0.01);
-    text-align: center;
-    padding: 5px 10px;
-    background-color: white;
-    color: #002B49;
-    border: 5px solid black;
-    visibility: hidden;
-    transition: 0.4s;
-}
 
 .openPopup {
     visibility: visible !important;
@@ -542,7 +511,7 @@ footer {
     padding: 20px;
 }
 
-.eventPopupMessage h1 {
+.eventPopupMessage p {
     font-size: 2rem;
 }
 

@@ -20,7 +20,6 @@ window.onload = function(event) {
     resizeCalendar();
   }
       
-
   if (page == "otbtournaments.html")
     carousel();
 
@@ -100,9 +99,7 @@ function assignPopup() {
     for (var i = 0; i < as.length; i++)
     {
         if(as[i].getAttribute("href") == "#" || as[i].getAttribute("href") == "")
-        {
             as[i].setAttribute("onclick", "openPopup()");
-        }
     }
 }
 
@@ -249,7 +246,7 @@ function eventPopup(id) {
 
   text = contents.get(id);
   const container = document.querySelector(".eventPopupMessage");
-  container.innerHTML = `<h1>${text}</h1>`;
+  container.innerHTML = `<p>${text}</p>`;
 
   let popup = document.getElementById("eventPopupContainer");
   popup.classList.add("openPopup");
@@ -303,19 +300,5 @@ function flexFont() {
       divs[i].style.fontSize = relFontSize+'px';
   }
 };
-
-//#endregion
-
-//#region Work in Progress
-
-function workInProgress() {
-
-  let head = document.getElementById("header");
-  let foot = document.getElementById("footer");
-  let content = document.getElementById("workInProgress");
-  let hfin = window.innerHeight - head.clientHeight - foot.clientHeight;
-  var x = hfin.toString().concat("px");
-  content.style.height = x;
-}
 
 //#endregion
