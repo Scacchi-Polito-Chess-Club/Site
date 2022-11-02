@@ -568,3 +568,44 @@ footer {
   }
   
 /* #endregion HamburgerMenu */
+
+/* #region w3CarouselButtons */
+
+.arrows {
+    color: white !important;
+    font-size: 3vw;
+    border:none;
+    display:inline-block;
+    padding:8px 16px;
+    vertical-align:middle;
+    overflow:hidden;
+    text-decoration:none;
+    color:inherit;
+    background-color:inherit;
+    text-align:center;
+    cursor:pointer;
+    white-space:nowrap;
+    -webkit-touch-callout:none;
+    -webkit-user-select:none;
+    -khtml-user-select:none;
+    -moz-user-select:none;
+    -ms-user-select:none;
+    user-select:none;
+}
+
+.arrows-display-left {
+    position:absolute;
+    top:50%;
+    left:0%;
+    transform:translate(0%,-50%);
+    -ms-transform:translate(-0%,-50%)
+}
+
+.arrows-display-right{
+    position:absolute;
+    top:50%;right:0%;
+    transform:translate(0%,-50%);
+    -ms-transform:translate(0%,-50%)
+}
+
+/* #endregion w3CarouselButtons */

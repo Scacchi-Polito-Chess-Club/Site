@@ -87,7 +87,7 @@ function carousel() {
   if(slideIndex > images.length) {slideIndex = 0;}
   x.style.backgroundImage = images[slideIndex++];
 
-  setTimeout(carousel, 4000); // Change image every 2 seconds
+  // setTimeout(carousel, 4000); // Change image every 2 seconds
 }
 //#endregion
 
