@@ -14,13 +14,13 @@ window.onload = function(event) {
   var path = window. location. pathname;
   var page = path. split("/"). pop();
       
-  if (page == "events.html")
+  if (page == "index.html" || page == "events.html")
   {
     calendar();
     resizeCalendar();
   }
       
-  if (page == "otbtournaments.html")
+  if (page == "index.html" || page == "otbtournaments.html")
     carousel();
 
   assignPopup();

@@ -8,7 +8,16 @@
     <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Sofia">
     <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Fredoka">
     <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Koulen">
-    <title>PoliTo Chess Club</title>
+    <link rel="stylesheet" type="text/css" href="css/evo-calendar.css"/>
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.13.0/css/all.min.css"
+    />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Quicksand:wght@300;400;500;600;700&display=swap"
+      rel="stylesheet"
+    />
+    <title>PoliTo Chess Club - Home</title>
     <script src="scripts/main.js"></script> 
 </head>
 <body>
@@ -27,13 +36,13 @@
                     <a href="index.html">Home</a>
                 </li>
                 <li  class="menu-item">
-                    <a href="events.html">Events</a>
+                    <a href="#events">Events</a>
                 </li>
                 <li class="menu-item">
-                    <a href="otbtournaments.html">OTB Tournaments</a>
+                    <a href="#otbtournaments">OTB Tournaments</a>
                 </li>
                 <li  class="menu-item">
-                    <a href="joinus.html">Join Us</a>
+                    <a href="#joinus">Join Us</a>
                 </li>
             </ul>
         </div>
@@ -50,9 +59,9 @@
         <a href="javascript:void(0)" class="closebtn" onclick="closeNav()">&times;</a>
         <div class="overlay-content">
             <a href="index.html" onclick="closeNav()">Home</a>
-            <a href="events.html" onclick="closeNav()">Events</a>
-            <a href="otbtournaments.html" onclick="closeNav()">OTB Tournaments</a>
-            <a href="joinus.html" onclick="closeNav()">Join Us</a>
+            <a href="#events" onclick="closeNav()">Events</a>
+            <a href="#otbtournaments" onclick="closeNav()">OTB Tournaments</a>
+            <a href="#joinus" onclick="closeNav()">Join Us</a>
         </div>
     </div>
 
@@ -116,28 +125,110 @@
         </div>
     </div>
 
-    <footer id="footer">
-        <div class="social">
-            <div class="social-list-wrapper">
-                <ul>
-                    <li class="social-item">
-                        <a href="https://www.instagram.com/scacchi_polito/"><img src="./images/instagram.png" alt=""></a>
-                    </li>
-                    <li class="social-item">
-                        <a href="http://t.me/ScacchiPoliTO"><img src="./images/telegram.png" alt=""></a>
-                    </li>
-                    <li class="social-item">
-                        <a href="https://discord.gg/Ff7QnvpNj7"><img src="./images/discord.png" alt=""></a>
-                    </li>
-                </ul>  
+    <div class="preface" id="events">
+        <h2>Check out the calendar of our events, days in which there's an event are colored in orange. Learn more about the event by clicking on the colored square!</h1>
+    </div>
+
+    <div class="container" id="containerCalendar">
+        <div class="calendar">
+          <div class="month">
+            <i class="fas fa-angle-left prev"></i>
+            <div class="date">
+              <h1></h1>
+              <p></p>
+            </div>
+            <i class="fas fa-angle-right next"></i>
+          </div>
+          <div class="weekdays">
+            <div>Sun</div>
+            <div>Mon</div>
+            <div>Tue</div>
+            <div>Wed</div>
+            <div>Thu</div>
+            <div>Fri</div>
+            <div>Sat</div>
+          </div>
+          <div class="days"></div>
+        </div>
+    </div>
+
+    <div class="eventPopupContainer" id="eventPopupContainer">
+        <div class="eventPopupTitle">
+            
+        </div>
+        <div class="eventPopupMessage">
+            
+        </div>
+        <div class="eventPopupFooter">
+            <button onclick="closeEventPopup()">OK</button>
+        </div>
+    </div>
+
+    <div class="preface" id="otbtournaments">
+        <h2>Here there are some photos about past tournaments and their final result, new tournaments are coming soon...</h1>
+    </div>
+
+    <div class="carousel-container">
+
+        <div class="side-images" style="background: url(./images/pizza.png) no-repeat center center;">
+        </div>
+
+        <div id="carousel" class="carousel">
+        </div>
+
+        <div class="side-images" style="background: url(./images/knigth.png) no-repeat center center;">
+        </div>
+
+    </div>
+
+    <div class="past-tournaments-container">
+        <div></div>
+
+        <div id="list-container" class="list-container">
+            <h1 style="text-decoration: underline;">Past Tournaments</h1>
+            <ul>
+                <li>
+                    <a href="https://drive.google.com/file/d/1jsVDb9cWuiEwUrdORATMPv7vHq6mx4B4/view?usp=sharing">Tournaments 21/10/2022</a>
+                </li>
+            </ul>
+        </div>
+
+        <div></div>
+    </div>
+
+    <div class="preface" id="joinus">
+        <h2>Finally we invite you to join us in our online clubs so you can find our chess community in these most common websites.</h1>
+    </div>
+
+    <div class="section" style="height: 60%;">
+        <div class="section-image" style="background-color: white;">
+            <div class="generic-image" style="background: url(./images/chess.png) no-repeat center center;">
+                <a href="https://www.chess.com/club/polito" class="fill-div"></a>
             </div>
         </div>
-        <div class="copyright flexFont">
-            <p>&copy; Copyright 2022, PoliTo Chess Club</p>
+        <div class="section-image">
+            <div class="generic-image" style="background: url(./images/lichess.png) no-repeat center center;">
+                <a href="https://lichess.org/team/polito" class="fill-div"></a>
+            </div>
+        </div>
+    </div>
+
+    <footer id="footer">
+        <div class="social">
+            <ul>
+                <li class="social-item">
+                    <a href="https://www.instagram.com/scacchi_polito/"><img src="./images/instagram.png" alt=""></a>
+                </li>
+                <li class="social-item">
+                    <a href="http://t.me/ScacchiPoliTO"><img src="./images/telegram.png" alt=""></a>
+                </li>
+                <li class="social-item">
+                    <a href="https://discord.gg/Ff7QnvpNj7"><img src="./images/discord.png" alt=""></a>
+                </li>
+            </ul>
+            <p>&copy; Copyright 2022, PoliTo Chess Club</p>  
         </div>
     </footer>
 
 </body>
 </html>
-
-<!-- try to commit from visual studio -->

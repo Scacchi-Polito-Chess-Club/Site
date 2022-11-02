@@ -122,7 +122,7 @@ nav {
 }
 
 .section-image {
-    background-color: rgb(239, 123, 0, 0.7);;
+    background-color: rgb(239, 123, 0, 0.7);
 }
 
 .generic-image {
@@ -157,7 +157,7 @@ nav {
 }
 
 .preface {
-    background-color: rgb(239, 123, 0, 0.7);
+    background-color: #002B49;
     padding: 80px;
     color:  white;
 }
@@ -171,8 +171,8 @@ nav {
 
 .side-images {
     background-size: contain !important;   
-    height: 60%;
-    width: 60%;
+    height: 80%;
+    width: 80%;
     margin: auto;
 }
 
@@ -210,6 +210,15 @@ nav {
     font-size: 2vw;
 }
 
+
+.fill-div {
+    display: block;
+    height: 100%;
+    width: 100%;
+    text-decoration: none;
+}
+
+
 /* #endregion Body */
 
 /* #region Footer */
@@ -225,13 +234,7 @@ footer {
     width: 100%;
     position: relative;
     text-align: center;
-}
-
-.social-list-wrapper {
-    height: 70%;
-    width: 100%;
-    position: absolute;
-    top: 30%;
+    padding-top: 50px;
 }
 
 .social-item {
@@ -240,24 +243,14 @@ footer {
 }
 
 .social-item a img {
-    height: 65px;
-    width: 65x;
+    height: 60px;
+    width: 60x;
 }
 
-.copyright {
-    height: 50%;
-    width: 100%;
-    text-align: center;
+.social p {
     color: white;
-    display: table;
+    margin-top: 15px;
 }
-
-.copyright p {
-    font-size: 20px;
-    display: table-cell;
-    vertical-align: middle;
-}
-
 /* #endregion Footer */
 
 /* #region Responsive Design */
@@ -271,8 +264,7 @@ footer {
     }
 
     .logoPoli {
-        max-height: 100px;
-        max-width: 110px;
+        max-height: 70px;
     }
 
     .menu-list {display:  none; }
@@ -280,8 +272,11 @@ footer {
     .hamburger.active .bar:nth-child(2) { opacity: 0; }
     .hamburger.active .bar:nth-child(1) { transform: translateY(8px) rotate(45deg); }
     .hamburger.active .bar:nth-child(3) { transform: translateY(-8px) rotate(-45deg); }
-  
-    .section { height: 60vw; }
+
+    .preface { padding: 40px; }
+    .preface h2 { font-size: 4vw; }
+    .section { height: 50vw; }
+    .container { height: 50% !important;}
 
     .popup {
         top: 25%;
@@ -290,13 +285,15 @@ footer {
     }
 
     footer {  height: 120px; }
-    .copyright p { font-size: 15px !important; };
+    .social { padding-top: 30px; }
     .social-item { padding: 0 15px; }
     .social-item a img { height: 40px; width: 40px;}
 }
 
 @media screen and (max-width: 560px)
 {
+    .logoPoli { max-height: 70px; max-width: 80px;}
+
     .generic-content h1 {font-size: 4vw;}
     .generic-content p {font-size: 3vw;}
 
@@ -333,32 +330,23 @@ footer {
         font-size: 2rem;
         padding: 15px;
     }
+
+    .social p { font-size: 3vw; margin-top: 8px; }
 }
 
 @media screen and (max-height: 750px) {
 
     nav { height: 180px; }
-  
-    .logoClub {
-        max-height: 150px;
-    }
-
-    .logoPoli {
-        max-height: 100px;
-        max-width: 110px;
-    }
+    .logoClub { max-height: 150px; }
+    .logoPoli { max-height: 70px; }
 
     .menu-list {display:  none; }
     .hamburger { display: block; }
     .hamburger.active .bar:nth-child(2) { opacity: 0; }
     .hamburger.active .bar:nth-child(1) { transform: translateY(8px) rotate(45deg); }
     .hamburger.active .bar:nth-child(3) { transform: translateY(-8px) rotate(-45deg); }
-    
-    .section { height: 50%; }
 
-    footer { height: 120px; }
-    .social-item { padding: 0 15px; }
-    .copyright p { font-size: 15px !important; }
+    .section { height: 50%; }
 }
 
 /* #endregion Responsive Design */
@@ -367,8 +355,9 @@ footer {
 
 .container {
     width: 100%;
-    height: 70vh;
-    background-color: whitesmoke;
+    height: 80%;
+    background-image: url(./images/background.png);
+    background-size: contain;
     color: #eee;
     display: flex;
     justify-content: center;
@@ -480,11 +469,11 @@ footer {
 }
 
 .eventPopupContainer {
-    position: absolute;
+    position: fixed;
     z-index: 100;
     width: 50%;
-    margin: 25%;
-    top: 10%;
+    top: 25%;
+    left: 25%;
     transform: scale(0.01);
     text-align: center;
     padding: 0px;
