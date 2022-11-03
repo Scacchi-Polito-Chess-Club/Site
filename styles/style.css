@@ -1,0 +1,65 @@
+/*
+Colore Blu di Prussia: #002B49
+Colore Arancione: #EF7B00
+*/
+
+/*
+CSS schema (use arrows on left to aggregate regions)
+
+    -Main Theme
+    -Navbar
+        -Main Nav
+        -Hamburger Menu
+    -Body
+        -Home Sections
+        -Calendar
+            -Calendar Structure
+            -Popup
+        -OTB Tournaments
+        -Join Us
+    -Footer
+    -Responsive Design
+        -769px — 1024px: Small screens, laptops
+        -481px — 768px: iPads, Tablets    
+        -320px — 480px: Mobile devices
+
+*/
+
+/* #region Main Theme */
+
+* {
+    margin: 0;
+    padding: 0;
+    font-family: "Fredoka", sans-serif;
+    scroll-behavior: smooth;
+    box-sizing: border-box;
+}
+
+html, body {
+    height: 100%;
+}
+
+ul {
+    list-style-type: none;
+}
+
+h1 {
+    font-family: "Koulen", sans-serif;
+    font-size: 3.5vw;
+}
+
+h2 {
+    font-size: 2.0vw;
+}
+
+a {
+    font-size: 1.5vw;
+    text-decoration: none;
+    color: #FFFFFF;
+}
+
+p {
+    font-size: 1.7vw;
+}
+
+/* #endregion Main Theme */

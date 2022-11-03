@@ -1,0 +1,114 @@
+/* #region Main Nav */
+
+nav {
+    height: 330px;
+    background-color: #002B49;
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+
+}
+
+.menu {
+    text-align: center;
+    margin: auto;
+}
+
+.menu-item {
+    padding: 5px 5px;
+}
+
+.menu-item a {
+    font-weight: bold;
+    transition: all .3s;
+    -webkit-transition: all .3s;
+    -moz-transition: all .3s;
+    -o-transition: all .3s;
+}
+
+.menu-item a:hover {
+    color: #EF7B00;
+}
+
+.logoClub {
+    background: url(../images/logoClubNeg.png) no-repeat center center;
+    background-size: contain;
+    height: 100%;
+    width: 100%;
+    margin: auto;
+    max-height: 220px;
+}
+
+.logoPoli {
+    background: url(../images/logoPolitoNeg.png) no-repeat center center;
+    background-size: contain;
+    height: 100%;
+    width: 100%;
+    margin: auto;
+    max-height: 170px;
+}
+
+.hamburger {
+    display: none;
+}
+
+.bar {
+    display: block;
+    width: 35px;
+    height: 3px;
+    margin: 5px auto;
+    background-color: white;
+    -webkit-transition: all 0.3 ease-in-out;
+    transition: all 0.3 ease-in-out;
+}
+
+/* #endregion Main Nav */
+
+/* #region Hamburger Menu */
+
+/* The Overlay (background) */
+.overlay {
+    /* Height & width depends on how you want to reveal the overlay (see JS below) */   
+    height: 100%;
+    width: 0;
+    position: fixed; /* Stay in place */
+    z-index: 1; /* Sit on top */
+    left: 0;
+    top: 0;
+    background-color: rgba(0, 43, 73, 0.9); /* Black w/opacity */
+    overflow-x: hidden; /* Disable horizontal scroll */
+    transition: 0.35s; /* 0.2 second transition effect to slide in or slide down the overlay (height or width, depending on reveal) */
+  }
+  
+  /* Position the content inside the overlay */
+  .overlay-content {
+    position: relative;
+    top: 25%; /* 25% from the top */
+    width: 100%; /* 100% width */
+    text-align: center; /* Centered text/links */
+    margin-top: 30px; /* 30px top margin to avoid conflict with the close button on smaller screens */
+  }
+  
+  /* The navigation links inside the overlay */
+  .overlay a {
+    padding: 8px;
+    text-decoration: none;
+    font-size: 20px;
+    color: #DDDDDD;
+    display: block; /* Display block instead of inline */
+    transition: 0.3s; /* Transition effects on hover (color) */
+  }
+  
+  /* When you mouse over the navigation links, change their color */
+  .overlay a:hover, .overlay a:focus {
+    color: #EF7B00;
+  }
+  
+  /* Position the close button (top right corner) */
+  .overlay .closebtn {
+    position: absolute;
+    font-size: 40px;
+    top: 15px;
+    right: 35px;
+  }
+  
+/* #endregion Hamburger Menu */
