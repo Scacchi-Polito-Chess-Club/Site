@@ -11,30 +11,19 @@ function closeNav() {
 }
 
 window.onload = function(event) {
-  var path = window. location. pathname;
-  var page = path. split("/"). pop();
       
-  if (page == "index.html" || page == "events.html")
-  {
-    calendar();
-    resizeCalendar();
-  }
-      
-  if (page == "index.html" || page == "otbtournaments.html")
-    carousel();
-
-  assignPopup();
+  calendar();
+  resizeCalendar();
+  carousel();
   flexFont();
+
 };
 
 window.onresize = function(event) {
-  var path = window. location. pathname;
-  var page = path. split("/"). pop();
 
-  if (page == "events.html")
-      resizeCalendar();
-
+  resizeCalendar();
   flexFont();
+
 };
 
 //#region Carousel
@@ -92,16 +81,6 @@ function carousel() {
 //#endregion
 
 //#region PopUp Functions
-
-function assignPopup() {
-    var as = document.getElementsByTagName("a");
-    
-    for (var i = 0; i < as.length; i++)
-    {
-        if(as[i].getAttribute("href") == "#" || as[i].getAttribute("href") == "")
-            as[i].setAttribute("onclick", "openPopup()");
-    }
-}
 
 function openPopup() {
     let popup = document.getElementById("popup");
@@ -273,20 +252,7 @@ function flexFont() {
   var path = window.location.pathname;
   var page = path. split("/"). pop();
   var divs = document.getElementsByClassName("flexFont");
-  var coeff;
-
-  switch(page)
-  {
-      case "index.html":
-          coeff = 0.05;
-          break;
-      case "events.html":
-          coeff = 0.10;
-          break;
-      default:
-          coeff = 0.05;
-          break;
-  }
+  var coeff = 0.05;
 
   for(var i = 0; i < divs.length; i++) {
       

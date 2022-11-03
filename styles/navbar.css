@@ -33,18 +33,16 @@ nav {
     background: url(../images/logoClubNeg.png) no-repeat center center;
     background-size: contain;
     height: 100%;
-    width: 100%;
+    width: 60%;
     margin: auto;
-    max-height: 220px;
 }
 
 .logoPoli {
     background: url(../images/logoPolitoNeg.png) no-repeat center center;
     background-size: contain;
     height: 100%;
-    width: 100%;
+    width: 60%;
     margin: auto;
-    max-height: 170px;
 }
 
 .hamburger {
@@ -112,3 +110,38 @@ nav {
   }
   
 /* #endregion Hamburger Menu */
+
+/* #region Responsive Design */
+
+/* #region Small screens, laptops */
+
+@media screen and (max-width: 1024px) {
+    
+    .logoPoli { width: 80%; }
+    .logoClub { width: 80%; }
+
+}
+
+/* #endregion Small screens, laptops */
+
+/* #region iPads, Tablets */
+
+@media screen and (max-width: 768px) {
+
+    nav { height: 230px; }
+
+}
+
+/* #endregion iPads, Tablets */
+
+/* #region Mobile devices */
+
+@media screen and (max-width: 480px) {
+  
+    nav { height: 180px; }
+
+}
+
+/* #endregion Mobile devices */
+
+/* #endregion Responsive Design */

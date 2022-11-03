@@ -2,7 +2,7 @@
 /* #region Home Sections */
 
 .section {
-    height: 40%;
+    height: 500px;
     width: 100%;
     text-align: center;
     display: grid;
@@ -55,7 +55,7 @@
 
 .container-calendar {
     width: 100%;
-    height: 80%;
+    height: 800px;
     background-image: url(../images/background.png);
     background-size: contain;
     color: #eee;
@@ -223,10 +223,10 @@
 
 /* #region OTB Tournaments Section */
 .carousel-container {
-    height: 60%;
+    height: 700px;
     width: 100%;
     display: grid;
-    grid-template-columns: 1fr 1fr 1fr;
+    grid-template-columns: 1fr 1.5fr 1fr;
 }
 
 .carousel {
@@ -288,7 +288,7 @@
 
 .past-tournaments-container {
     background-color: rgb(239, 123, 0, 0.7);
-    height: 60%;
+    height: 600px;
     width: 100%;
     display: grid;
     grid-template-columns: 1fr 3fr 1fr;
@@ -312,7 +312,7 @@
 /* #region Join Us */
 
 .section-joinus {
-    height: 60%;
+    height: 650px;
     width: 100%;
     text-align: center;
     display: grid;
@@ -328,6 +328,8 @@
 
 /* #endregion Join Us */
 
+/* #region Other Components */
+
 .preface {
     text-align: center;
     display: grid;
@@ -340,3 +342,50 @@
     margin: auto;
     width: 60%;
 }
+
+/* #endregion Other Components */ 
+
+/* #region Responsive Design */
+
+/* #region Small screens, laptops */
+
+@media screen and (max-width: 1024px) {
+
+    .list-container h1 { font-size: 5vw !important; }
+    .list-container a { font-size: 2.8vw !important; }
+    .section-joinus { height: 400px; }
+
+}
+
+/* #endregion Small screens, laptops */
+
+/* #region iPads, Tablets */
+
+@media screen and (max-width: 768px) {
+
+    .section { height: 370px; }
+    .past-tournaments-container { height: 400px; }
+    .preface { padding: 50px; }
+
+}
+
+/* #endregion iPads, Tablets */
+
+/* #region Mobile devices */
+
+@media screen and (max-width: 480px) {
+  
+    .list-container h1 { font-size: 7vw !important; }
+    .list-container a { font-size: 4vw !important; }
+    .section { height: 230px; }
+    .generic-content p { padding: 5px 10px; }
+    .preface { padding: 25px; }
+    .carousel-container { height: 400px; }
+    .arrows { font-size: 6vw; }  
+    .section-joinus { height: 270px;}
+
+}
+
+/* #endregion Mobile devices */
+
+/* #endregion Responsive Design */

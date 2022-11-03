@@ -63,3 +63,42 @@ p {
 }
 
 /* #endregion Main Theme */
+
+/* #region Responsive Design */
+
+/* #region Small screens, laptops */
+
+@media screen and (max-width: 1024px) {
+
+    h1 { font-size: 4.3vw; }
+    h2 { font-size: 3vw; }
+    a { font-size: 2.2vw; }
+    p { font-size: 2.3vw; }
+
+}
+
+/* #endregion Small screens, laptops */
+
+/* #region iPads, Tablets */
+
+@media screen and (max-width: 768px) {
+
+    p { font-size:  2.6vw;}
+
+}
+
+/* #endregion iPads, Tablets */
+
+/* #region Mobile devices */
+
+@media screen and (max-width: 480px) {
+ 
+    h1 { font-size: 5vw; }
+    h2 { font-size: 4vw; }
+    p { font-size: 2.8vw; }
+
+}
+
+/* #endregion Mobile devices */
+
+/* #endregion Responsive Design */
