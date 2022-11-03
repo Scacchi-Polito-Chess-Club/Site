@@ -370,6 +370,9 @@
     .container-calendar { height: 600px; }
     .arrows { font-size: 6vw; }
     .side-images { background-image: none !important; }
+    .eventPopupContainer { width: 80%; left: 10%; top:15%; }
+    .eventPopupTitle h1 { font-size: 5vw !important; }
+    .eventPopupMessage p { font-size: 4vw !important; }
 
 }
 

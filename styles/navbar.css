@@ -45,25 +45,26 @@ nav {
     margin: auto;
 }
 
+/* #endregion Main Nav */
+
+/* #region Hamburger Menu */
+
+/* The Overlay (background) */
+
 .hamburger {
     display: none;
 }
 
 .bar {
     display: block;
-    width: 35px;
-    height: 3px;
-    margin: 5px auto;
+    width: 50px;
+    height: 7px;
+    margin: 8px auto;
     background-color: white;
     -webkit-transition: all 0.3 ease-in-out;
     transition: all 0.3 ease-in-out;
 }
 
-/* #endregion Main Nav */
-
-/* #region Hamburger Menu */
-
-/* The Overlay (background) */
 .overlay {
     /* Height & width depends on how you want to reveal the overlay (see JS below) */   
     height: 100%;
@@ -90,7 +91,7 @@ nav {
   .overlay a {
     padding: 8px;
     text-decoration: none;
-    font-size: 20px;
+    font-size: 5vw;
     color: #DDDDDD;
     display: block; /* Display block instead of inline */
     transition: 0.3s; /* Transition effects on hover (color) */
@@ -143,6 +144,7 @@ nav {
 
 @media screen and (max-width: 480px) {
   
+    .bar { height: 3px; margin: 5px auto; width: 35px;}
     nav { height: 180px; }
 
 }
