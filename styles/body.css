@@ -366,6 +366,9 @@
     .section { height: 370px; }
     .past-tournaments-container { height: 400px; }
     .preface { padding: 50px; }
+    .carousel-container { height: 450px; }
+    .container-calendar { height: 600px; }
+    .arrows { font-size: 5vw; }
 
 }
 
@@ -375,14 +378,16 @@
 
 @media screen and (max-width: 480px) {
   
+    .past-tournaments-container { height: 300px; }
     .list-container h1 { font-size: 7vw !important; }
     .list-container a { font-size: 4vw !important; }
     .section { height: 230px; }
     .generic-content p { padding: 5px 10px; }
     .preface { padding: 25px; }
     .carousel-container { height: 400px; }
+    .container-calendar { height: 500px; }
     .arrows { font-size: 6vw; }  
-    .section-joinus { height: 270px;}
+    .section-joinus { height: 240px;}
 
 }
 
