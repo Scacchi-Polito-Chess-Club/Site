@@ -145,7 +145,7 @@ nav {
 @media screen and (max-width: 480px) {
   
     .bar { height: 3px; margin: 5px auto; width: 35px;}
-    nav { height: 180px; }
+    nav { height: 130px; }
 
 }
 
