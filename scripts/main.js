@@ -181,7 +181,8 @@ const renderCalendar = () => {
     // fill month with all the days
     if (
       i === new Date().getDate() &&
-      date.getMonth() === new Date().getMonth()
+      date.getMonth() === new Date().getMonth() &&
+      date.getFullYear() === new Date().getFullYear()
     ) {
       days += `<div class="today">${i}</div>`;
     } 
