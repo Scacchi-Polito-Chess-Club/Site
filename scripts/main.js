@@ -14,7 +14,7 @@ window.onload = function(event) {
       
   calendar();
   resizeCalendar();
-  carousel();
+  carousel(0);
   flexFont();
 
 };
@@ -28,7 +28,7 @@ window.onresize = function(event) {
 
 //#region Carousel
 
-function carousel() {
+function carousel(incr) {
   
   var images = [
     "url(./images/tournaments00/photo_2022-10-23_17-49-41.jpg)",
@@ -73,8 +73,10 @@ function carousel() {
   ];
 
   var x = document.getElementById('carousel');
-  if(slideIndex > images.length) {slideIndex = 0;}
-  x.style.backgroundImage = images[slideIndex++];
+  slideIndex += incr;
+  if(slideIndex > images.length) { slideIndex = 0; }
+  else if (slideIndex < 0) { slideIndex = images.length - 1; }
+  x.style.backgroundImage = images[slideIndex];
 
   // setTimeout(carousel, 4000); // Change image every 2 seconds
 }
